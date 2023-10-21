@@ -1,0 +1,8 @@
+.idea/
+.idea/*
+out/
+out/*
+target/
+target/*
+BahrClient_1_metastock.iml
+db.db

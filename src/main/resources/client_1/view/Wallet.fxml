@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client_1.controller.Wallet">
+   <children>
+      <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="المحفظة البسيطة">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tbl" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="tbl_w">
+              <columns>
+                <TableColumn fx:id="tbcSelect" editable="false" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" sortable="false" text="#" />
+                <TableColumn fx:id="tbcSymple" editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="الرمز" />
+                  <TableColumn fx:id="tbcDate" editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="تاريخ الشراء" />
+                  <TableColumn fx:id="tbcPay" editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="سعر الشراء" />
+                  <TableColumn fx:id="tbcLastPrice" editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="اخر سعر" />
+                  <TableColumn fx:id="tbcFinalResult" editable="false" minWidth="100.0" prefWidth="100.0" sortable="false" text="ربح / خسارة" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="40.0" text="الرمز">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSymple" alignment="CENTER" minWidth="100.0" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="90.0" text="تاريخ الشراء">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXDatePicker fx:id="dpDate" editable="false" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="dypDate" />
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="100.0" text="سعر الشراء">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPay" alignment="CENTER" minWidth="100.0" />
+                  <JFXButton minWidth="80.0" onAction="#onClickSave" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="حفظ ">
+                     <graphic>
+                        <FontAwesomeIconView fill="#087200" glyphName="PLUS_CIRCLE" size="16" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <JFXButton onAction="#onClickDeleteSelected" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="حذف المحدد">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#onClickDeleteAll" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="حذف جميع المدخلات">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox maxWidth="1.7976931348623157E308" spacing="10.0">
+                     <children>
+                        <JFXButton onAction="#onClickRefreshLastPrice" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="تحديث أخر سعر">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
